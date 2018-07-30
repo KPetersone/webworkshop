@@ -1,13 +1,27 @@
-LoginSteps.java
+package stepdefinitions;
 
-        package stepdefinitions;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
+import static com.codeborne.selenide.Selenide.close;
+import static com.codeborne.selenide.Selenide.open;
+import static org.openqa.selenium.remote.BrowserType.CHROME;
 
-public class LoginSteps {
-    @And("^I select Login button$")
-    public void iSelectLoginButton() throws Throwable {
-        selectLoginbutton();
+public class Hooks {
+
+    @Before
+    public void launchBrowser() {
+        System.setProperty("selenide.browser", CHROME);
     }
+
+    @Before
+    public void openHomePage() {
+        open("https://www.phptravels.net/");
+    }
+
+    @After
+    public void closeBrowser() {
+        close();
+    }
+
 }
