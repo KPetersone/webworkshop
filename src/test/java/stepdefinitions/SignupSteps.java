@@ -55,7 +55,6 @@ public class SignupSteps {
         confirmPassword();
     }
 
-
     @Then("^user account page is opened$")
     public void userAccountPageIsOpened() throws Throwable {
         System.out.println("ACCOUNT CREATED!");
